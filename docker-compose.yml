@@ -1,0 +1,15 @@
+version: '3'
+services:
+  node-app:
+    build: 
+      context: ./sample-node-app
+    ports:
+      - 3001:3001
+    depends_on:
+      - python-app
+  python-app:
+    build: 
+      context: ./sample-python-app    
+    restart: always
+    ports:
+      - 8080:8080
